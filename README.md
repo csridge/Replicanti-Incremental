@@ -1,2 +1,2 @@
-# Replicanti Incremental
+# Nhân bản Tích lũy
  
