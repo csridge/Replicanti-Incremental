@@ -7,7 +7,7 @@ const ACHS = {
     },
     has(id) { return player.achs.includes(id) },
     getText(id) {
-        let txt = this.descs[id]+(this.rewards[id] !== undefined ? " Reward: "+this.rewards[id] : "")
+        let txt = this.descs[id]+(this.rewards[id] !== undefined ? " Phần thưởng: "+this.rewards[id] : "")
         if (txt.indexOf("format") != -1) {
 			let txt2 = txt.split("format")[1];
 			return txt.split("format")[0] + format(txt2.slice(1, txt2.indexOf(")"))) + txt2.split(")")[1];
@@ -23,32 +23,32 @@ const ACHS = {
     names: {
         0: "Placeholder",
 
-        11: "Get Started",
-        12: "You doesn't fit Infinity",
-        13: "Did get galaxy faster?",
-        14: "Double Galaxy",
-        15: "Inflation",
-        16: "When sacrifice galaxies",
-        17: "Buffer Galaxy",
-        18: "Infinity Halfway",
+        11: "Bắt đầu",
+        12: "Mày không vừa với Vô hạn",
+        13: "Đã được Ngân hà nhanh hơn chưa?",
+        14: "Hai Ngân hà",
+        15: "Lạm phát",
+        16: "Khi hy sinh Ngân hà",
+        17: "Thiên hà được buff",
+        18: "Nửa chặng đường đến Vô hạn",
 
-        21: "INFINITY PAGE",
-        22: "Why i'm added cap?",
-        23: "Taking longer",
-        24: "Sacrifice without galaxies?",
-        25: "Rock isn't smarter than you think",
-        26: "Infinity go brrr",
+        21: "TRANG VÔ HẠN",
+        22: "Sao tao lại thêm giới hạn?",
+        23: "Tốn nhiều hơn",
+        24: "Hy sinh mà không có ngân hà?",
+        25: "Rock thực ra chẳng thông minh",
+        26: "Vô hạn kiểu brrr",
         27: "Try Hard",
-        28: "Prestige capped?!",
+        28: "Uy tín bị giới hạn?!",
 
-        31: "NOICE",
-        32: "HA GO BRRR",
-        33: "Anti-Galaxy",
-        34: "New Challenger",
-        35: "Timewall again?",
-        36: "Challenge Boy",
+        31: "TUYỆT",
+        32: "HA KIỂU BRRR",
+        33: "Phản Ngân hà",
+        34: "Người thử thách tiếp theo",
+        35: "Lại là bức tường thời gian?",
+        36: "Thằng béo thử thách",
         37: "Got'em about happy?",
-        38: "Replicanti^2",
+        38: "Nhân bản^2",
 
         41: "Challenged Master",
         42: "Meta-Prestige",
