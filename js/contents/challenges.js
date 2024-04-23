@@ -36,40 +36,40 @@ const CHALS = {
         }
     },
     normal: {
-        btnMsg(x) { return player.chals.active == "normal"+x ? "Running" : (player.chals.comps.includes("normal"+x) ? "Completed" : "Start") },
+        btnMsg(x) { return player.chals.active == "normal"+x ? "Đang làm" : (player.chals.comps.includes("normal"+x) ? "Đã hoàn thành" : "Bắt đầu") },
         onEnter() {
             FORMS.inf.onReset(true)
         },
         length: 6,
         1: {
             unl() { return true },
-            desc: "Replicanti Penalty is 50% stronger",
-            reward: "Unlock Replicanti Storage autobuyer",
+            desc: "Hình phạt Nhân bản mạnh hơn 50%",
+            reward: "Mở khóa Tự động mua Kho Nhân bản",
         },
         2: {
             unl() { return true },
-            desc: "You cannot buy Replicanti Multiplier, and Replicanti growth starts 2x",
-            reward: "Unlock Replicanti Multiplier autobuyer",
+            desc: "Bạn không được mua Hệ số nhân Nhân bản, và sản lượng Nhân bản bắt đầu ở 2x",
+            reward: "Mở khóa Tự động mua Hệ số nhân Nhân bản",
         },
         3: {
             unl() { return true },
             desc: "Replicanti Multiplier/Power scales stronger",
-            reward: "Unlock Replicanti Power autobuyer",
+            reward: "Mở khóa Tự động mua Sức mạnh Nhân bản",
         },
         4: {
             unl() { return true },
-            desc: "Repeated Replicanti boost Replicanti Multiplier/Power instead of Replicanti Storage, but Repeated Replicanti are 4x stronger",
-            reward: "Unlock Repeated Replicanti autobuyer",
+            desc: "Lặp lại Nhân bản tăng Hệ số nhân Nhân bản/Sức mạnh thay vì Kho Nhân bản, nhưng Lặp lại Nhân bản mạnh hơn 4x",
+            reward: "Mở khóa Tự động mua Lặp lại Nhân bản",
         },
         5: {
             unl() { return true },
-            desc: "Replicanti Galaxy scales stronger",
-            reward: "Unlock Replicanti Galaxy autobuyer",
+            desc: "Ngân hà Nhân bản có quy mô lớn hơn",
+            reward: "Mở khóa Tự động mua Ngân hà Nhân bản",
         },
         6: {
             unl() { return true },
-            desc: "Prestige points gain are raised by 0.85",
-            reward: "You gain 100% of your Prestige points gained on reset each second",
+            desc: "Điểm uy tín nhân được bị mũ 0,85",
+            reward: "Bạn nhận được 100% số điểm Uy tín đạt được khi khởi động lại mỗi giây",
         },
     },
     inf: {
@@ -84,8 +84,8 @@ const CHALS = {
         length: 6,
         1: {
             goal: E('e480'),
-            desc: "All previous challenges at once",
-            reward: "All of the challenges completed boost Infinity Replicanti growth",
+            desc: "Tất cả các thử thách trước đó cùng một lúc",
+            reward: "Tất cả các thử thách đã hoàn thành đều thúc đẩy sản lượng của Nhân bản Vô hạn",
         },
         2: {
             goal: E('e500'),
