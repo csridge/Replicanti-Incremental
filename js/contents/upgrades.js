@@ -98,12 +98,12 @@ const UPGS = {
         },
         11: {
             unl() { return true },
-            desc: "Replicanti Multiplier is twice effective.",
+            desc: "Hệ số nhân Nhân bản hiệu quả gấp 2 lần.",
             cost: E(1),
         },
         12: {
             unl() { return true },
-            desc: "Replicanti Multiplier/Power is stronger based on unspent Prestige points.",
+            desc: "Hệ số nhân Nhân bản/Nhân bản Sức mạnh mạnh hơn dựa trên số điểm Uy tín chưa được sử dụng.",
             cost: E(3),
             effect() {
                 let ret = player.prestige.points.add(1).log10().add(1).root(2)
@@ -113,17 +113,17 @@ const UPGS = {
         },
         13: {
             unl() { return true },
-            desc: "Replicanti Penalty is 25% weaker.",
+            desc: "Hình phạt Nhân bản yếu hơn 25%.",
             cost: E(10),
         },
         14: {
             unl() { return true },
-            desc: "Replicanti Galaxy no longer resets anything.",
+            desc: "Ngân hà Nhân bản không khởi động lại cái gì nữa.",
             cost: E(25),
         },
         21: {
             unl() { return true },
-            desc: "Replicanti Slowdown starts later based on unspent Prestige points.",
+            desc: "Làm chậm Nhân bản bắt đầu muộn hơn dựa trên số điểm Uy tín chưa được sử dụng.",
             cost: E(100),
             effect() {
                 let ret = player.prestige.points.add(1).pow(2)
@@ -134,12 +134,12 @@ const UPGS = {
         },
         22: {
             unl() { return true },
-            desc: "Repeated Replicanti is twice stronger.",
+            desc: "Lặp lại nhân bản mạnh gấp 2 lần.",
             cost: E(2.5e3),
         },
         23: {
             unl() { return true },
-            desc: "Replicanti Galaxy is stronger based on unspent Prestige points.",
+            desc: "Ngân hà Nhân bản mạnh hơn dựa trên số điểm Uy tín chưa được sử dụng.",
             cost: E(2.5e4),
             effect() {
                 let ret = player.prestige.points.add(1).log10().add(1).pow(0.6)
@@ -149,7 +149,7 @@ const UPGS = {
         },
         24: {
             unl() { return true },
-            desc: "Prestige upgrade 5 is raised by Replicanti Galaxy.",
+            desc: "Nâng cấp Uy tín số 5 được mũ bởi Ngân hà Nhân bản.",
             cost: E(5e5),
             effect() {
                 let ret = player.rep_galaxy.add(1).root(3)
@@ -159,7 +159,7 @@ const UPGS = {
         },
         31: {
             unl() { return true },
-            desc: "Replicanti Slowdown starts 1.15x later for every OoM of Replicanti.",
+            desc: "Làm chậm Nhân bản bắt đầu muộn hơn 1,15 lần cho mỗi OoM của Nhân bản.",
             cost: E(1e7),
             effect() {
                 let ret = E(1.15).pow(player.replicanti.log10().softcap(FORMS.INF.log10(), 1/2, 0))
@@ -170,7 +170,7 @@ const UPGS = {
         },
         32: {
             unl() { return true },
-            desc: "Prestige points boosts itself.",
+            desc: "ĐIểm Uy tín tự nhân chính nó.",
             cost: E(1e9),
             effect() {
                 let ret = player.prestige.points.add(1).log10().add(1).pow(2)
@@ -181,12 +181,12 @@ const UPGS = {
         },
         33: {
             unl() { return true },
-            desc: "Replicanti Slowdown starts ^1.15 later.",
+            desc: "Làm chậm Nhân bản bắt đầu ^1,15 muộn hơn.",
             cost: E(1e10),
         },
         34: {
             unl() { return true },
-            desc: "Replicanti Galaxy is 1.5% stronger for every OoM of Replicanti.",
+            desc: "Ngân hà Nhân bản mạnh hơn 1,5% cho mỗi OoM của Nhân bản.",
             cost: E(5e12),
             effect() {
                 let ret = E(0.015).mul(player.replicanti.log10()).add(1)
@@ -196,17 +196,17 @@ const UPGS = {
         },
         41: {
             unl() { return true },
-            desc: "Prestige upgrade 8 can boost Prestige upgrade 9.",
+            desc: "Nâng cấp Uy tín số 8 có thể tăng cường Nâng cấp Uy tín số 9.",
             cost: E(1e14),
         },
         42: {
             unl() { return player.breakInf },
-            desc: "Prestige upgrade 10 formula is better.",
+            desc: "Công thức của Nâng cấp Uy tín số 10 tốt hơn.",
             cost: E(1e36),
         },
         43: {
             unl() { return player.breakInf },
-            desc: "Replicanti Galaxy is cheaper based on Replicanti.",
+            desc: "Ngân hà Nhân bản rẻ hơn dựa trên Nhân bản.",
             cost: E(1e54),
             effect() {
                 let ret = player.replicanti.root(4)
@@ -216,7 +216,7 @@ const UPGS = {
         },
         44: {
             unl() { return player.breakInf && FORMS.replicanti.sacrifice.unl() },
-            desc: "Replicanti Sacrifice boost Prestige points gain.",
+            desc: "Hy sinh Nhân bản tăng cường số điểm Uy tín nhận được.",
             cost: E(1e120),
             effect() {
                 let ret = E(2).pow(player.rep_sacrifice.pow(0.625))
