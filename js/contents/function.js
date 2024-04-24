@@ -237,7 +237,7 @@ const FORMS = {
             && player.chals.comps.includes("normal4") 
             && player.chals.comps.includes("normal5") 
             && player.chals.comps.includes("normal6") },
-            msg() { return player.breakInf ? "Fix Infinity" : "Break Infinity" },
+            msg() { return player.breakInf ? "Sửa chữa Vô hạn" : "Phá vỡ Vô hạn" },
         },
         mult: {
             cost(x=player.inf.mults) { return E(10).pow(x).mul(1e15) },
