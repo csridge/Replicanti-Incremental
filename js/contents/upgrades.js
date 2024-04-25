@@ -245,7 +245,7 @@ const UPGS = {
         },
         1: {
             id: 1,
-            title: "Infinity Replicanti Multiplier",
+            title: "Hệ số nhân Nhân bản Vô hạn",
             cost(x=player.inf_rep_upgs[this.id]) { return E(1.5).pow(x.pow(player.inf.upgrades.includes(42)?1.25:1.5)).floor() },
             effect(x=player.inf_rep_upgs[this.id]) {
                 let lvl = x
@@ -253,7 +253,7 @@ const UPGS = {
                 if (player.inf.upgrades.includes(13)) lvl = lvl.mul(UPGS.post_inf[13].effect())
                 return lvl.mul(0.01).add(1)
             },
-            desc(eff=this.effect()) { return `Multiple Infinity Replicanti growth by ${format(eff)}x.` },
+            desc(eff=this.effect()) { return `Nhân sản lượng Nhân bản Vô hạn ${format(eff)}x.` },
             bulk(x=player.replicanti) {
                 if (x.lt(1)) return E(0)
                 let bulk = x.logBase(1.5).root(player.inf.upgrades.includes(42)?1.25:1.5).add(1).floor()
@@ -273,7 +273,7 @@ const UPGS = {
         },
         11: {
             unl() { return true },
-            desc: "Replicanti Slowdown starts later based on unspent Infinity points.",
+            desc: "Làm chậm Nhân bản bắt đầu sau đó dựa trên số điểm Vô hạn chưa sử dụng.",
             cost: E(100),
             effect() {
                 let ret = player.inf.points.add(1).pow(20)
@@ -283,7 +283,7 @@ const UPGS = {
         },
         12: {
             unl() { return true },
-            desc: "Infinity points is boosted by Prestige points.",
+            desc: "Điểm Vô hạn được tăng cường bởi số điểm Uy tín.",
             cost: E(500),
             effect() {
                 let ret = player.prestige.points.add(1).log10().add(1)
@@ -293,7 +293,7 @@ const UPGS = {
         },
         13: {
             unl() { return true },
-            desc: "Keep Prestige upgrades on reset. Infinity Replicanti Multiplier is stronger based on Replicanti.",
+            desc: "Giữ các nâng cấp Uy tín khi khởi động lại. Hệ số nhân Nhân bản Vô hạn mạnh hơn dựa trên số lượng Nhân bản.",
             cost: E(2.5e4),
             effect() {
                 let ret = player.replicanti.log10().add(1).log10().add(1)
@@ -303,17 +303,17 @@ const UPGS = {
         },
         14: {
             unl() { return true },
-            desc: "Replicanti Slowdown is 15% weaker.",
+            desc: "Làm chậm Nhân bản yếu hơn 15%",
             cost: E(2.5e5),
         },
         21: {
             unl() { return true },
-            desc: "Replicanti galaxy formula is better.",
+            desc: "Công thức Ngân hà Nhân bản tốt hơn",
             cost: E(1e7),
         },
         22: {
             unl() { return FORMS.replicanti.sacrifice.unl() },
-            desc: "Replicanti Sacrifice boost Infinity points gain.",
+            desc: "Hy sinh Nhân bản tăng cường lượng Điểm Vô hạn nhận được.",
             cost: E(5e9),
             effect() {
                 let ret = E(2).pow(player.rep_sacrifice.pow(0.3))
@@ -323,7 +323,7 @@ const UPGS = {
         },
         23: {
             unl() { return true },
-            desc: "Replicanti Growth hardcap starts later based on Replicanti.",
+            desc: "Giới hạn cứng Sản lượng Nhân bản bắt đầu muộn hơn dựa trên lượng Nhân bản.",
             cost: E(1e13),
             effect() {
                 let ret = player.replicanti
@@ -335,17 +335,17 @@ const UPGS = {
         },
         24: {
             unl() { return true },
-            desc: "Remove effect softcap from Infinity Replicanti.",
+            desc: "Loại bỏ hiệu ứng giới hạn mềm khỏi Infinity Replicanti.",
             cost: E(1e18),
         },
         31: {
             unl() { return true },
-            desc: "Remove Replicanti Slowdown limit softcap.",
+            desc: "Loại bỏ giới hạn mềm làm chậm Nhân bản.",
             cost: E(1e20),
         },
         32: {
             unl() { return true },
-            desc: "Infinity Compressors adds free Infinity Replicanti Multipliers, and Infinity Compressor debuff is 50% weaker.",
+            desc: "Máy nén Vô hạn tăng Hệ số nhân Nhân bản Vô hạn miễn phí, và sự chống phát triển của Máy nén Vô hạn yếu hơn 50%.",
             cost: E(1e33),
             effect() {
                 let ret = player.inf.comp
@@ -355,7 +355,7 @@ const UPGS = {
         },
         33: {
             unl() { return true },
-            desc: "Replicanti Slowdown^2 starts later based on unspent Prestige points.",
+            desc: "Làm chậm Nhân bản^2 bắt đầu muộn hơn dựa trên số điểm Uy tín chưa sử dụng.",
             cost: E(1e44),
             effect() {
                 let ret = player.prestige.points.add(1)
@@ -366,7 +366,7 @@ const UPGS = {
         },
         34: {
             unl() { return true },
-            desc: "Infinity Compressors boosts Prestige points gain.",
+            desc: "Máy nén Vô hạn tăng cường số điểm Vô hạn nhận được.",
             cost: E(1e63),
             effect() {
                 let ret = E(10).pow(player.inf.comp.pow(1.5).mul(2).softcap(1e3,0.5,0))
@@ -376,7 +376,7 @@ const UPGS = {
         },
         41: {
             unl() { return player.replicator.unl },
-            desc: "Replicator boosts Infinity points gain.",
+            desc: "Máy Nhân bản tăng số điểm Vô hạn nhận được.",
             cost: E(5e64),
             effect() {
                 let ret = player.replicator.amount.log10().mul(2).add(1)
@@ -386,12 +386,12 @@ const UPGS = {
         },
         42: {
             unl() { return player.replicator.unl },
-            desc: "Infinity Replicanti Multiplier cost scales weaker.",
+            desc: "Hệ số nhân Nhân bản Vô hạn có quy mô chi phí yếu hơn.",
             cost: E(1e83),
         },
         43: {
             unl() { return player.replicator.unl },
-            desc: "Infinity upgrade 11 be stronger by Replicator.",
+            desc: "Nâng cấp Vô hạn số 11 mạnh hơn dựa trên Máy Nhân bản.",
             cost: E(1e86),
             effect() {
                 let ret = player.replicator.amount.log10().add(1).log10().add(1).root(3)
