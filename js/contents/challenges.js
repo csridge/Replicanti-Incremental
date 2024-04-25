@@ -53,7 +53,7 @@ const CHALS = {
         },
         3: {
             unl() { return true },
-            desc: "Replicanti Multiplier/Power scales stronger",
+            desc: "Hệ số nhân Nhân bản/Sức mạnh Nhân bản có quy mô giá lớn hơn",
             reward: "Mở khóa Tự động mua Sức mạnh Nhân bản",
         },
         4: {
@@ -63,7 +63,7 @@ const CHALS = {
         },
         5: {
             unl() { return true },
-            desc: "Ngân hà Nhân bản có quy mô lớn hơn",
+            desc: "Ngân hà Nhân bản có quy mô giá lớn hơn",
             reward: "Mở khóa Tự động mua Ngân hà Nhân bản",
         },
         6: {
@@ -77,7 +77,7 @@ const CHALS = {
         canComplete() { return player.replicanti.gte(this[player.chals.active.split("inf")[1]].goal) },
         canUnlock() { return player.replicanti.gte(this.requires[player.chals.inf_unls]) },
         unlock() { if (this.canUnlock()) player.chals.inf_unls++ },
-        btnMsg(x) { return player.chals.active == "inf"+x ? "Running" : (player.chals.comps.includes("inf"+x) ? "Completed" : "Start") },
+        btnMsg(x) { return player.chals.active == "inf"+x ? "Đang chạy" : (player.chals.comps.includes("inf"+x) ? "Đã hoàn thành" : "Bắt đầu") },
         onEnter() {
             FORMS.inf.onReset(true)
         },
@@ -89,28 +89,28 @@ const CHALS = {
         },
         2: {
             goal: E('e500'),
-            desc: "Replicant Galaxy is disabled, but you can sacrifice Replicanti",
-            reward: "Unlock Replicanti Sacrifice",
+            desc: "Ngân hà Nhân bản bị tắt, nhưng bạn có thể Hy sinh Nhân bản",
+            reward: "Mở khóa Hy sinh Nhân bản",
         },
         3: {
             goal: E('e640'),
-            desc: "Replicanti Penalty, Replicanti Slowdown is twice stronger",
-            reward: "Replicanti Penalty is 25% weaker",
+            desc: "Hình phạt, Làm chậm Nhân bản mạnh gấp đôi",
+            reward: "Hình phạt Nhân bản yếu hơn 25%r",
         },
         4: {
             goal: E('e2300'),
-            desc: "Infinity Replicanti effects are disabled",
-            reward: "Infinity points gain is increased by 2x for every challenge completed, unlock Replicanti Sacrifice autobuyer",
+            desc: "Hiệu ứng từ Nhân bản Vô hạn bị tắt",
+            reward: "Số điểm Vô hạn nhận được nhân đôi cho mỗi thử thách hoàn thành, mở khóa Tự động Hy sinh Nhân bản",
         },
         5: {
             goal: E('e4400'),
-            desc: "Replicanti Sacrifice is disabled",
-            reward: "Infinity points gain softcap is 50% weaker",
+            desc: "Hy sinh Nhân bản bị tắt",
+            reward: "Giới hạn mềm số điểm Vô hạn nhận được yếu hơn 50%",
         },
         6: {
             goal: E('e1400'),
-            desc: "You cannot buy Prestige upgrades except 1 and 2 row",
-            reward: "Prestige points gain softcap is sightly weaker",
+            desc: "Bạn không được mua các Nâng cấp Uy tín trừ hàng 1 và hàng 2",
+            reward: "Giới hạn mềm số điểm Uy tín nhận được yếu đi một chút",
         },
     },
 }
