@@ -401,7 +401,7 @@ const UPGS = {
         },
         44: {
             unl() { return player.replicator.unl },
-            desc: "Infinity upgrade 7 softcaps instead of hardcaps.",
+            desc: "Nâng cấp Vô hạn số 7 bị giới hạn mềm thay vì cứng.",
             cost: E(1e120),
         },
     },
