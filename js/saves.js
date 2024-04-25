@@ -203,7 +203,7 @@ function exporty() {
 }
 
 function importy() {
-    let loadgame = prompt("Paste in your save WARNING: WILL OVERWRITE YOUR CURRENT SAVE")
+    let loadgame = prompt("Dán vào bản lưu của bạn CẢNH BÁO: SẼ GHI LẠI BẢN LƯU HIỆN TẠI CỦA BẠN")
     if (loadgame != null) {
         load(loadgame)
         location.reload()
