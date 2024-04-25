@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replicanti</title>
+  <style>
+    #replicanti {
+      font-size: 24px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>It is multiplying itself with 1.7 like in the game so you can see its grow</div>
+  <div id="replicanti">1</div>
+  <script>
+    function replicateAndDouble() {
+      var replicantiElement = document.getElementById('replicanti');
+      var currentValue = parseInt(replicantiElement.innerText);
+      var newValue = currentValue * 1.7;
+      replicantiElement.innerText = newValue;
+    }
+    setInterval(replicateAndDouble, 1000);
+  </script>
+</body>
+</html>
